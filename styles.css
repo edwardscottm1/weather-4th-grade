@@ -1,0 +1,146 @@
+:root {
+    --form-radius: 5px;
+    --form-height: 30px;
+}
+
+html, body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* background-color: #22B3F0; */
+    margin: 0px;
+    background-attachment: fixed;
+    background-image: linear-gradient(to bottom, #93c0d5, #22B3F0);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    background-attachment: fixed;
+    background-image: linear-gradient(to bottom, #bfd9e4, #22B3F0);
+    height: 44px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+#title {
+    font-size: 30px;
+    margin: 5px;
+}
+
+#search-location {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+#search-location form {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    
+}
+
+input[type="search"] {
+    border-radius: var(--form-radius);
+    height: var(--form-height);
+    width: 200px;
+}
+
+input[type="submit"] {
+    background-color: #22B3F0;
+    border-radius: var(--form-radius);
+    height: var(--form-height);
+    width: 80px;
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+input[type="submit"]:hover {
+    background-color: #f0ed22;
+}
+
+input[type="submit"]:active {
+    background-color: #e4e4d3;
+}
+
+form {
+    background-color: #8db3c5;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 0px 5px 2px;
+    
+
+}
+
+
+#weather-data {
+
+    width: 100%;
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+
+
+.data {
+    width: 100%;
+    height: 100%;   
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    padding: 30px;
+    box-sizing: border-box;
+    padding-top: 0px;
+}
+
+.data div {
+    background-image: linear-gradient(to bottom, white, rgb(220, 218, 218));
+    border-radius: var(--form-radius);
+    box-shadow: 0px 0px 10px 5px rgba(79, 79, 84, 0.2);
+    transition: all .2s ease;
+    box-sizing: border-box;
+    padding: 20px;
+}
+.data div:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 0px 15px 5px rgba(79, 79, 84, 0.3);
+}
+
+h2 {
+    margin: 0px;
+}
+#current-sun-moon {
+}
+
+#current-data {
+    flex: 2;
+}
+#location {
+    font-weight: 100;
+    font-size: 30px;
+}
+#sun-data {
+    flex: .5;
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+    flex-direction: column;
+    text-align: center;
+}
+
+.hour {
+    font-weight: 100;
+}
+#moon-data {
+    flex: 1;
+}
+
+#hourly-data {
+    flex: 1;
+}
+
+#daily-data {
+    flex: 1;
+}

@@ -17,7 +17,7 @@ html, body {
 nav {
     background-attachment: fixed;
     background-image: linear-gradient(to bottom, #bfd9e4, #22B3F0);
-    height: 44px;
+    height: 50px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -55,6 +55,7 @@ input[type="submit"] {
     width: 80px;
     transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
+
 input[type="submit"]:hover {
     background-color: #f0ed22;
 }
@@ -95,15 +96,15 @@ form {
     padding-top: 0px;
 }
 
-.data div {
+.data > div {
     background-image: linear-gradient(to bottom, white, rgb(220, 218, 218));
     border-radius: var(--form-radius);
     box-shadow: 0px 0px 10px 5px rgba(79, 79, 84, 0.2);
     transition: all .2s ease;
     box-sizing: border-box;
-    padding: 20px;
+    padding: 15px;
 }
-.data div:hover {
+.data > div:hover {
     transform: scale(1.02);
     box-shadow: 0px 0px 15px 5px rgba(79, 79, 84, 0.3);
 }
@@ -111,12 +112,12 @@ form {
 h2 {
     margin: 0px;
 }
-#current-sun-moon {
-}
+
 
 #current-data {
     flex: 2;
 }
+
 #location {
     font-weight: 100;
     font-size: 30px;
@@ -133,14 +134,93 @@ h2 {
 .hour {
     font-weight: 100;
 }
+
 #moon-data {
     flex: 1;
+    text-align: center;
+    font-weight: 100;
+}
+
+#moon-data h2, #hourly-data h2, #daily-data h2 {
+    font-weight: 100;
+    font-size: 30px;
+
 }
 
 #hourly-data {
     flex: 1;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#hours {
+    height: 100%;
+    background-image: radial-gradient(#bfd9e4, #71d0f9);
+    overflow: auto;
+    border-radius: var(--form-radius);
+
+    display: flex;
+    justify-content: space-around;
+    padding: 3px;
+    gap: 5px;
+    flex-wrap: nowrap;
+}
+
+#hours div {
+    height: 100%;
+    min-width: 10%;
+    background-color: white;
+    border-radius: var(--form-radius);
+}
+
+.hour * {
+    padding-bottom: 3px;
+    
+}
+
+.hour-temp {
+    margin: 0px;
+    font-size: 23px;
+    font-weight: 300;
+    padding-bottom: 10px;
+}
+
+.hour-precip {
+    margin: 0px;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.hour-wind {
+    margin: 0px;
+    font-size: 14px;
+    font-weight: 300;
 }
 
 #daily-data {
     flex: 1;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+#days {
+    height: 100%;
+    background-image: radial-gradient(#bfd9e4, #71d0f9);
+    overflow: auto;
+    border-radius: var(--form-radius);
+
+    display: flex;
+    justify-content: space-around;
+    padding: 3px;
+    gap: 5px;
+    flex-wrap: nowrap;
 }

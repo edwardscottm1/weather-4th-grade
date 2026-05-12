@@ -5,7 +5,7 @@ function main() {
     // Get Div that holds the hours
     let hoursDiv = document.querySelector('#hours');
     // Create 12 divs that hold data for 12 hours
-        for (let i = 1; i < 12; i++) {
+        for (let i = 1; i < 8; i++) {
         //Create div for the hour
         let hourDiv = document.createElement('div');
         hourDiv.classList.add('hour');

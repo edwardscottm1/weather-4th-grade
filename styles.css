@@ -177,7 +177,7 @@ h2 {
     height: 80%;
     background-image: radial-gradient(#bfd9e4, #71d0f9);
     overflow-x: auto;
-    /* overflow-y: hidden; */
+    overflow-y: hidden;
     border-radius: var(--form-radius);
     white-space: nowrap;
 
@@ -206,7 +206,7 @@ h2 {
     /* transform: translateX(30%); */
 }
 .hour * {
-    padding-top: .1rem;
+    padding-top: .2px;
     
 }
 

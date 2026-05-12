@@ -6,6 +6,7 @@
     <!-- <link rel="icon" type="image/x-icon" href="images/bigfoot-icon.jpg"> -->
     <link href="styles.css" rel="stylesheet" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-base.min.js"></script>
   </head>
   <body>
     <nav>
@@ -33,22 +34,29 @@
 
         <div  id="moon-data">
           <h2>Moon Phase</h2> 
+          <img id="moon" src="images/placeholder-moon.jpg">
+          <p id="moon-phase-label">Wanning Crescent</p>
           <!-- <div id="moon-drawing"><div id="moon"></div> -->
         </div>
       </div>
       <div id="hourly-daily" class="data">
-        <div id="hourly-data">
+        <div id="daily-data">
           <h2>7 Day Forecast</h2>
-          <div id="hours">
-            <script src="create-hourly-elements.js"></script>
+          <div id="days">
+            <script src="create-daily-elements.js"></script>
           </div>
         </div>
-        <div id="daily-data">
-          <h2>Hourly Forecast</h2>
-          <div id="days">
-            <script>
-
-            </script>
+        <div id="hourly-data">
+          <h2>Hourly Forecast Line Graph</h2>
+          <div id="graph-selector">
+            <div id="hour-temp">℉</div>
+            <div id="hour-precip">💦</div>
+            <div id="hour-wind">🍃</div>
+          </div>
+          <div id="hours">
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <canvas id="temps"></canvas>
+            <script src="create-hourly-chart.js"></script>
           </div>
         </div>
       </div>

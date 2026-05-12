@@ -4,33 +4,49 @@
 function main() {
     // Get Div that holds the hours
     let daysDiv = document.querySelector('#days');
-    let daysOfWeek = ['Sunday', 'Monday', 'Tuesday',
-                      'Wednesday', 'Thursday',
-                      'Friday', 'Saturday'
-     ]
-    // Create 7 divs that hold data for 7 days
-    for (let i = 1; i <= daysOfWeek.length; i++) {
-        // Create div
+    // Create 12 divs that hold data for 12 hours
+        for (let i = 1; i < 8; i++) {
+        //Create div for the hour
         let dayDiv = document.createElement('div');
         dayDiv.classList.add('day');
+        // Create label to show hour of div
+        let hourLabel = document.createElement(`p`);
+        hourLabel.textContent = 'Monday';
+        hourLabel.classList.add('day-label');
+        // Create image for condition
+        let imageElement = document.createElement('img');
+        imageElement.setAttribute('src', 'images/bkn.png')
+        imageElement.classList.add('image');
+        // Create temp label
+        let tempDayElement = document.createElement('p');
+        tempDayElement.textContent = '78°F';
+        tempDayElement.classList.add('day-temp');
 
-        // Create Day label
-        let dayLabel = document.createElement('p');
-        dayDiv.innerHTML = daysOfWeek[i];
+        let tempNightElement = document.createElement('p');
+        tempNightElement.textContent = '54°F';
+        tempNightElement.classList.add('night-temp');
 
-        // Create img
-        let conditionImage = document.createElement('img');
-        conditionImage.setAttribute('src', 'images/bkn.png');
+        // Create percip label
+        let precipElement = document.createElement('p');
+        precipElement.innerHTML = '💦40%';
+        precipElement.classList.add('day-precip');
 
-        // create temp label
-        let tempLabel = document.createElement('p');
-        tempLabel.innerHTML = '78°F'
+        // Create wind label
+        let windElement = document.createElement('p');
+        windElement.innerHTML = '🍃10 - 20 mph';
+        windElement.classList.add('day-wind');
 
-        // condition label
-        let conditionLabel = document.createElement('p');
-        conditionLabel.innerHTML = 'Sunny';
-        
-    }
+        // Append these elements to the page
+        dayDiv.appendChild(hourLabel);
+        dayDiv.appendChild(imageElement);
+        dayDiv.appendChild(tempDayElement);
+        dayDiv.appendChild(tempNightElement);
+        dayDiv.appendChild(precipElement);
+        dayDiv.appendChild(windElement);
+
+        // Append the the hour div to the page
+        daysDiv.appendChild(dayDiv);
+   }
 
 }
 

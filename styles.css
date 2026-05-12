@@ -151,9 +151,19 @@ h2 {
 }
 
 #moon-data {
-    flex: 1;
+    flex: .7;
     text-align: center;
     font-weight: 100;
+}
+
+#moon {
+    width: 25vh;
+    height: 25vh;
+    border-radius: var(--form-radius);
+}
+#moon-phase-label {
+    margin: 0;
+    font-size: 3vh;
 }
 
 #moon-data h2, #hourly-data h2, #daily-data h2 {
@@ -162,7 +172,7 @@ h2 {
 
 }
 
-#hourly-data {
+#daily-data {
     flex: 1;
     text-align: center;
     height: 100%;
@@ -173,7 +183,7 @@ h2 {
     flex-wrap: nowrap;
 }
 
-#hours {
+#days {
     height: 80%;
     background-image: radial-gradient(#bfd9e4, #71d0f9);
     overflow-x: auto;
@@ -185,7 +195,7 @@ h2 {
     /* max-width: 45rem; */
 }
 
-#hours div {
+#days div {
     height: 95%;
     width: 15%;
     margin: .2rem .2rem;
@@ -199,13 +209,13 @@ h2 {
     border-radius: var(--form-radius);
     
 }
-.hour img {
+.day img {
     width: 3vw;
     height: 3vw;
     padding-block: .2rem;
     /* transform: translateX(30%); */
 }
-.hour * {
+.day * {
     padding-top: max(.2px, .5%);
     
 }
@@ -229,19 +239,19 @@ h2 {
     /* padding-bottom: 10px; */
 }
 
-.hour-precip {
+.day-precip {
     margin: 0px;
     font-size: clamp(1rem, 1.1vw, 1.8rem);
     font-weight: 300;
 }
 
-.hour-wind {
+.day-wind {
     margin: 0px;
     font-size: clamp(.6rem, 1vw, 1.2rem);;
     font-weight: 300;
 }
 
-#daily-data {
+#hourly-data {
     flex: 1;
     text-align: center;
     height: 100%;
@@ -249,12 +259,14 @@ h2 {
     justify-content: center;
     flex-direction: column;
     gap: 5px;
+
+    position: relative;
 }
 
 
-#days {
+#hours {
     height: 100%;
-    background-image: radial-gradient(#bfd9e4, #71d0f9);
+    /* background-image: radial-gradient(#bfd9e4, #71d0f9); */
     overflow: auto;
     border-radius: var(--form-radius);
 
@@ -263,4 +275,35 @@ h2 {
     padding: 3px;
     gap: 5px;
     flex-wrap: nowrap;
+}
+
+#graph-selector {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+
+    display: flex;
+    gap: .4rem;
+}
+
+#graph-selector > div {
+    background-color: #71d0f9;
+    width: 1.3rem;
+    /* background-image: linear-gradient(to bottom, #bfd9e4, #71d0f9); */
+    user-select: none;
+    cursor: pointer;
+    transition: all .1s linear;
+    border: 1px gray solid;
+    border-radius: var(--form-radius);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 0px 5px 2px;
+}
+
+#graph-selector > div:hover {
+    background-color: #f0ed22;
+    box-shadow: rgba(86, 86, 92, 0.2) 0px 0px 5px 2px;
+}
+
+#graph-selector > div:active {
+    background-color: #e4e4d3;
+    box-shadow: rgba(25, 25, 25, 0.2) 0px 0px 5px 2px;
 }

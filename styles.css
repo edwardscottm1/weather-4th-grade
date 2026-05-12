@@ -3,6 +3,9 @@
     --form-height: 30px;
 }
 
+/* html {
+    font-size: 30px;
+} */
 html, body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     /* background-color: #22B3F0; */
@@ -17,7 +20,7 @@ html, body {
 nav {
     background-attachment: fixed;
     background-image: linear-gradient(to bottom, #bfd9e4, #22B3F0);
-    height: 50px;
+    /* height: 50px; */
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -26,7 +29,7 @@ nav {
 }
 
 #title {
-    font-size: 30px;
+    font-size: 2vw;
     margin: 5px;
 }
 
@@ -45,14 +48,19 @@ nav {
 input[type="search"] {
     border-radius: var(--form-radius);
     height: var(--form-height);
-    width: 200px;
+    width: max(200px, 30vw);
+    height: max(30px, 5vh);
+    font-size: 2vh;
 }
 
 input[type="submit"] {
     background-color: #22B3F0;
     border-radius: var(--form-radius);
     height: var(--form-height);
-    width: 80px;
+    width: max(100px, 6vw);
+    height: max(30px, 5vh);
+
+    font-size: 2vh;
     transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
@@ -67,20 +75,19 @@ input[type="submit"]:active {
 form {
     background-color: #8db3c5;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 0px 5px 2px;
-    
-
 }
 
 
 #weather-data {
-
     width: 100%;
     flex: 1;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100%;
+    height: fit-content;
+
+    /* max-height: 612px;  */
 }
 
 
@@ -94,6 +101,9 @@ form {
     padding: 30px;
     box-sizing: border-box;
     padding-top: 0px;
+    
+    min-height: 315px;
+    max-height: 40vh;
 }
 
 .data > div {
@@ -103,6 +113,8 @@ form {
     transition: all .2s ease;
     box-sizing: border-box;
     padding: 15px;
+    /* height: max(); */
+    
 }
 .data > div:hover {
     transform: scale(1.02);
@@ -111,6 +123,7 @@ form {
 
 h2 {
     margin: 0px;
+    font-size: 2vw;
 }
 
 
@@ -120,7 +133,7 @@ h2 {
 
 #location {
     font-weight: 100;
-    font-size: 30px;
+    /* font-size: 1rem; */
 }
 #sun-data {
     flex: .5;
@@ -129,6 +142,8 @@ h2 {
     justify-content: space-around;
     flex-direction: column;
     text-align: center;
+
+    /* font-size: .7rem; */
 }
 
 .hour {
@@ -143,7 +158,7 @@ h2 {
 
 #moon-data h2, #hourly-data h2, #daily-data h2 {
     font-weight: 100;
-    font-size: 30px;
+    /* font-size: 30px; */
 
 }
 
@@ -154,50 +169,75 @@ h2 {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    gap: 5px;
-}
-
-#hours {
-    height: 100%;
-    background-image: radial-gradient(#bfd9e4, #71d0f9);
-    overflow: auto;
-    border-radius: var(--form-radius);
-
-    display: flex;
-    justify-content: space-around;
-    padding: 3px;
-    gap: 5px;
+    gap: .5rem;
     flex-wrap: nowrap;
 }
 
-#hours div {
-    height: 100%;
-    min-width: 10%;
-    background-color: white;
+#hours {
+    height: 80%;
+    background-image: radial-gradient(#bfd9e4, #71d0f9);
+    overflow-x: auto;
+    /* overflow-y: hidden; */
     border-radius: var(--form-radius);
+    white-space: nowrap;
+
+    padding: 3px;
+    /* max-width: 45rem; */
 }
 
+#hours div {
+    height: 90%;
+    /* width: 5rem; */
+    margin: .2rem .2rem;
+    margin-block: 1rem;
+    display: inline-block;
+    vertical-align: top;
+    white-space: normal;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    border-radius: var(--form-radius);
+    
+}
+.hour img {
+    width: 3vw;
+    height: 3vw;
+    padding-block: .2rem;
+    /* transform: translateX(30%); */
+}
 .hour * {
-    padding-bottom: 3px;
+    padding-top: .1rem;
     
 }
 
-.hour-temp {
+.hour-label {
+    font-size: clamp(1rem, 1.2vw, 2rem);
     margin: 0px;
-    font-size: 23px;
+}
+
+.day-temp {
+    margin: 0px;
+    font-size: 1.5vw;
     font-weight: 300;
-    padding-bottom: 10px;
+    /* padding-bottom: 10px; */
+}
+
+.night-temp {
+    margin: 0px;
+    font-size: 1.2vw;
+    font-weight: 300;
+    /* padding-bottom: 10px; */
 }
 
 .hour-precip {
     margin: 0px;
-    font-size: 15px;
+    font-size: clamp(1rem, 1.1vw, 1.8rem);
     font-weight: 300;
 }
 
 .hour-wind {
     margin: 0px;
-    font-size: 14px;
+    font-size: clamp(.5rem, .9vw, 1rem);;
     font-weight: 300;
 }
 

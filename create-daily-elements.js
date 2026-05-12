@@ -21,6 +21,15 @@ function main() {
         // Create img
         let conditionImage = document.createElement('img');
         conditionImage.setAttribute('src', 'images/bkn.png');
+
+        // create temp label
+        let tempLabel = document.createElement('p');
+        tempLabel.innerHTML = '78°F'
+
+        // condition label
+        let conditionLabel = document.createElement('p');
+        conditionLabel.innerHTML = 'Sunny';
+        
     }
 
 }

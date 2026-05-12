@@ -11,8 +11,8 @@ function main() {
         hourDiv.classList.add('hour');
         // Create label to show hour of div
         let hourLabel = document.createElement(`p`);
-        hourLabel.textContent = '-- AM';
-        hourLabel.classList.add('hour-label');
+        hourLabel.textContent = 'Monday';
+        hourLabel.classList.add('day-label');
         // Create image for condition
         let imageElement = document.createElement('img');
         imageElement.setAttribute('src', 'images/bkn.png')

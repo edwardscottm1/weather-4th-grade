@@ -187,14 +187,14 @@ h2 {
 
 #hours div {
     height: 95%;
-    width: 6rem;
+    width: 15%;
     margin: .2rem .2rem;
     margin-block: .3rem;
     display: inline-block;
     vertical-align: top;
     white-space: normal;
     justify-content: space-around;
-    align-items: center;
+    align-content: center;
     background-color: white;
     border-radius: var(--form-radius);
     
@@ -206,25 +206,25 @@ h2 {
     /* transform: translateX(30%); */
 }
 .hour * {
-    padding-top: .2px;
+    padding-top: max(.2px, 1%);
     
 }
 
-.hour-label {
-    font-size: clamp(1rem, 1.2vw, 2rem);
+.day-label {
+    font-size: clamp(1rem, 1.3vw, 2rem);
     margin: 0px;
 }
 
 .day-temp {
     margin: 0px;
-    font-size: 1.5vw;
+    font-size: clamp(1rem, 1.5vw, 3rem);
     font-weight: 300;
     /* padding-bottom: 10px; */
 }
 
 .night-temp {
     margin: 0px;
-    font-size: 1.2vw;
+    font-size: clamp(.9rem, 1.4vw, 2.9rem);
     font-weight: 300;
     /* padding-bottom: 10px; */
 }
@@ -237,7 +237,7 @@ h2 {
 
 .hour-wind {
     margin: 0px;
-    font-size: clamp(.5rem, .9vw, 1rem);;
+    font-size: clamp(.6rem, 1vw, 1.2rem);;
     font-weight: 300;
 }
 

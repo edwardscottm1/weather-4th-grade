@@ -206,7 +206,7 @@ h2 {
     /* transform: translateX(30%); */
 }
 .hour * {
-    padding-top: max(.2px, 1%);
+    padding-top: max(.2px, .5%);
     
 }
 

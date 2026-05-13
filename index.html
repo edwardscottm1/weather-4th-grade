@@ -14,16 +14,42 @@
     </nav>
     <div id="search-location">
       <form>
-        <input type="search" placeholder="Enter location">
+        <input type="search" placeholder="Enter location"  list="locations">
+        <datalist id="locations">
+          <option value="Santa Fe, NM"></option>
+          <option value="Santa Clara, CA"></option>
+        </datalist>
         <input type="submit" value="Search" id="search">
       </form>
     </div>
 
     <div id="weather-data">
       <div id="current-sun-moon" class="data">
-        <div  id="current-data">
+        <div id="current-data">
           <h2 id="location">Santa Fe, NM, USA</h2>
-        </div>
+          <div id="current-main">
+            <div id="current-temps-div">
+              <p id="current-temp">78°F</p>
+              <div id="high-low">
+                <p>Day: 84°F</p> <p>Night: 45°F</p>
+              </div>
+            </div>
+            <div id="current-extra-div">
+                <p>Wind: 5 mph W</p>
+                <p>Feels Like: 75°F</p>
+                <p>Precipitation: 0%</p>
+                <p>Humidity: 36%</p>
+                <p>Dew Point: 33°F</p>
+            </div>
+            <div id="current-condition-image-div">
+              <img id="current-condition" src="images/skc.png">
+            </div>
+          
+          </div>
+          <div id="current-condition-container-description">
+          <p id="current-condition-description">A slight chance of rain showers after 3pm. Mostly sunny, with a high near 84. South wind 5 to 15 mph. A slight chance of rain showers after 3pm.</p>
+          </div>
+      </div>
         
         <div  id="sun-data">
           <h2>🌄Sunrise</h2>
@@ -36,7 +62,6 @@
           <h2>Moon Phase</h2> 
           <img id="moon" src="images/placeholder-moon.jpg">
           <p id="moon-phase-label">Wanning Crescent</p>
-          <!-- <div id="moon-drawing"><div id="moon"></div> -->
         </div>
       </div>
       <div id="hourly-daily" class="data">
@@ -47,9 +72,9 @@
           </div>
         </div>
         <div id="hourly-data">
-          <h2>Hourly Forecast Line Graph</h2>
+          <h2>Line Graph: Hourly Forecast </h2>
           <div id="graph-selector">
-            <div id="hour-temp">℉</div>
+            <div id="hour-temp">🌡️</div>
             <div id="hour-precip">💦</div>
             <div id="hour-wind">🍃</div>
           </div>

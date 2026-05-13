@@ -18,9 +18,12 @@ function main() {
           label: 'Temperature °F',
           data: temps,
           borderWidth: 3,
-          tension: 0.3,
-          borderColor: '#ed5142'
-        //   fill: true
+          tension: .5,
+          borderColor: '#ed5142',
+          backgroundColor: '#e7706571',
+          fill: true,
+        //   fillColor: 'red'
+        //   startAtZero: true
         }]
       },
 
@@ -40,12 +43,17 @@ function main() {
             title: {
                 display: true,
                 text: 'Hour',
-                color: 'black'
+                color: 'black',
+                font: {
+                    size: 15
+                }
             },
 
             ticks: {
-              color: 'black'
-
+              color: 'black',
+              font: {
+                size: 12
+              }
             },
 
             grid: {
@@ -61,10 +69,16 @@ function main() {
             title: {
                 display: true,
                 text: 'Temperature (F)',
-                color: 'black'
+                color: 'black',
+                font: {
+                    size: 15
+                }
             },
             ticks: {
-              color: 'black'
+              color: 'black',
+              font: {
+                size: 12
+              }
             },
 
             grid: {

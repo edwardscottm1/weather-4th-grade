@@ -1,6 +1,7 @@
 :root {
     --form-radius: 5px;
     --form-height: 30px;
+    --red: #ed5142;
 }
 
 /* html {
@@ -51,6 +52,12 @@ input[type="search"] {
     width: max(200px, 30vw);
     height: max(30px, 5vh);
     font-size: 2vh;
+}
+
+input:autofill,
+input:autofill:hover,
+input:autofill:focus {
+    background-color: white;
 }
 
 input[type="submit"] {
@@ -113,7 +120,7 @@ form {
     transition: all .2s ease;
     box-sizing: border-box;
     padding: 15px;
-    /* height: max(); */
+   
     
 }
 .data > div:hover {
@@ -128,13 +135,91 @@ h2 {
 
 
 #current-data {
-    flex: 2;
+    flex: 1.5;
 }
 
 #location {
     font-weight: 100;
     /* font-size: 1rem; */
 }
+
+#current-main {
+    display: flex;
+    justify-content: space-around;
+}
+
+#current-data * {
+    margin: 0;
+}
+#current-temps-div {
+    flex: 1.5;
+}
+
+#current-temp {
+    font-size: min(9rem, 14vh);
+    font-weight: 300;
+    /* margin: 0; */
+}
+
+#high-low {
+    display: flex;
+    gap: 1rem;
+    font-weight: 100;
+    /* font-size: clamp(.5rem, 10vh, 1.5rem); */
+    font-size: 2.8vh;
+}
+
+#current-extra-div {
+    flex: 1;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+}
+
+#current-extra-div p {
+    text-align: left;
+    margin: 0;
+    font-weight: 200;
+    font-size: 3vh;
+    /* font-size: clamp(.5rem, 8vh, 1.3rem); */
+    /* white-space: nowrap; */
+}
+    /* text-align: center; */
+
+#current-condition-image-div {
+    flex: 1;
+    display: flex;
+    /* align-content: center; */
+    justify-content: center; 
+}
+
+#current-condition {
+    object-fit: contain;
+    height: 22vh;
+    width: 22vh;
+    border-radius: var(--form-radius);
+    box-shadow: 0px 0px 25px 5px rgba(79, 79, 84, 0.3);
+    /* transform: translate(30%, 5%); */
+}
+
+#current-condition-container-description {
+    height: 8cqh;
+    overflow: auto;
+    
+}
+
+#current-condition-description {
+    font-weight: 100;
+    font-size: 2.3vh;
+    line-height: 1.2;
+    padding-top: 2px;
+
+
+    /* text-align: center; */
+}
+
 #sun-data {
     flex: .5;
     display: flex;
@@ -142,6 +227,7 @@ h2 {
     justify-content: space-around;
     flex-direction: column;
     text-align: center;
+    /* font-weight: 100; */
 
     /* font-size: .7rem; */
 }
@@ -166,7 +252,7 @@ h2 {
     font-size: 3vh;
 }
 
-#moon-data h2, #hourly-data h2, #daily-data h2 {
+#moon-data h2, #hourly-data h2, #daily-data h2, #sun-data h2 {
     font-weight: 100;
     /* font-size: 30px; */
 
@@ -192,10 +278,10 @@ h2 {
     white-space: nowrap;
 
     padding: 3px;
-    /* max-width: 45rem; */
+   
 }
 
-#days div {
+#days > div {
     height: 95%;
     width: 15%;
     margin: .2rem .2rem;
@@ -205,8 +291,10 @@ h2 {
     white-space: normal;
     justify-content: space-around;
     align-content: center;
-    background-color: white;
+    /* background-color: white; */
+    background-image: linear-gradient(to top, white, rgb(244, 239, 239));
     border-radius: var(--form-radius);
+    box-shadow: 0px 0px 10px 1px rgba(79, 79, 84, 0.3);
     
 }
 .day img {
@@ -287,8 +375,10 @@ h2 {
 }
 
 #graph-selector > div {
-    background-color: #71d0f9;
+    /* background-color: #71d0f9; */
     width: 1.3rem;
+    height: 3vh;
+    width: 3vh;
     /* background-image: linear-gradient(to bottom, #bfd9e4, #71d0f9); */
     user-select: none;
     cursor: pointer;
@@ -296,6 +386,7 @@ h2 {
     border: 1px gray solid;
     border-radius: var(--form-radius);
     box-shadow: rgba(100, 100, 111, 0.2) 0px 0px 5px 2px;
+    align-content: center;
 }
 
 #graph-selector > div:hover {
@@ -306,4 +397,16 @@ h2 {
 #graph-selector > div:active {
     background-color: #e4e4d3;
     box-shadow: rgba(25, 25, 25, 0.2) 0px 0px 5px 2px;
+}
+
+#graph-selector :nth-child(1) {
+    background-color: #ec6155;
+}
+
+#graph-selector :nth-child(2) {
+    background-color: #55bce8;
+}
+
+#graph-selector :nth-child(3) {
+    background-color: #8ae97b;
 }

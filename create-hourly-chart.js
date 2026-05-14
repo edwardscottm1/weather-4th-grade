@@ -20,8 +20,8 @@ function main() {
           borderWidth: 3,
           tension: .5,
           borderColor: '#ed5142',
-          backgroundColor: '#e7706571',
-          fill: true,
+          // backgroundColor: '#e7706571',
+          // fill: true,
         //   fillColor: 'red'
         //   startAtZero: true
         }]

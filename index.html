@@ -14,11 +14,10 @@
     </nav>
     <div id="search-location">
       <form>
-        <input type="search" placeholder="Enter location"  list="locations">
-        <datalist id="locations">
-          <option value="Santa Fe, NM"></option>
-          <option value="Santa Clara, CA"></option>
-        </datalist>
+        <div>
+          <input type="search" placeholder="Enter location">
+          <div id="suggested-locations"></div>
+        </div>
         <input type="submit" value="Search" id="search">
       </form>
     </div>

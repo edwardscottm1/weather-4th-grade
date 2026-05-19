@@ -9,6 +9,10 @@
     <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-base.min.js"></script>
   </head>
   <body>
+    <div id="loading">
+      <h3>Fetching Weather</h3>
+      <img src="images/sun.png">
+    </div>
     <nav>
       <div><h1 id="title">⛅Weather</h1></div>
     </nav>
@@ -30,18 +34,18 @@
             <div id="current-temps-div">
               <p id="current-temp">78°F</p>
               <div id="high-low">
-                <p>Day: 84°F</p> <p>Night: 45°F</p>
+                <p id="current-day-temp">Day: <span>84</span>°F</p> <p id="current-night-temp">Night: <span>45</span>°F</p>
               </div>
             </div>
             <div id="current-extra-div">
-                <p>Wind: 5 mph W</p>
-                <p>Feels Like: 75°F</p>
-                <p>Precipitation: 0%</p>
-                <p>Humidity: 36%</p>
-                <p>Dew Point: 33°F</p>
+                <p id="current-wind">Wind: 5 mph W</p>
+                <p id="current-feels-like">Feels Like: 75°F</p>
+                <p id="current-precipitation">Precipitation: 0%</p>
+                <p id="current-humidity">Humidity: 36%</p>
+                <p id="current-dew-point">Dew Point: 33°F</p>
             </div>
             <div id="current-condition-image-div">
-              <img id="current-condition" src="images/skc.png">
+              <img id="current-condition" src="nwsConditions/cold.webp">
             </div>
           
           </div>
@@ -73,20 +77,25 @@
         <div id="hourly-data">
           <h2>Line Graph: Hourly Forecast </h2>
           <div id="graph-selector">
-            <div id="hour-temp">🌡️</div>
-            <div id="hour-precip">💦</div>
-            <div id="hour-wind">🍃</div>
+            <div id="hour-temp" data-index="0">🌡️</div>
+            <div id="hour-precip" data-index="1">💦</div>
+            <div id="hour-wind" data-index="2">🍃</div>
           </div>
           <div id="hours">
             <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
             <canvas id="temps"></canvas>
+            <canvas id="precipitation"></canvas>
+            <canvas id="wind"></canvas>
             <script src="create-hourly-chart.js"></script>
           </div>
         </div>
       </div>
     </div>
-   
-    <script src = "script.js"></script>
+    <script src="graph-selector.js"></script>
+    <script type="module" src="updatePage.js"></script>
+    <script type="module" src="getMoonPhase.js"></script>
+    <script type="module" src="nwsWeatherFunctions.js"></script>
+    <script type="module" src="main.js"></script>
   
 </body>
 </html>

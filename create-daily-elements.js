@@ -15,7 +15,7 @@ function main() {
         hourLabel.classList.add('day-label');
         // Create image for condition
         let imageElement = document.createElement('img');
-        imageElement.setAttribute('src', 'images/bkn.png')
+        imageElement.setAttribute('src', 'nwsConditions/bkn.webp')
         imageElement.classList.add('image');
         // Create temp label
         let tempDayElement = document.createElement('p');
@@ -28,12 +28,12 @@ function main() {
 
         // Create percip label
         let precipElement = document.createElement('p');
-        precipElement.innerHTML = '💦40%';
+        precipElement.innerHTML = '💦<span>40</span>%';
         precipElement.classList.add('day-precip');
 
         // Create wind label
         let windElement = document.createElement('p');
-        windElement.innerHTML = '🍃10 - 20 mph';
+        windElement.innerHTML = '🍃<span>10 - <span>20</span> mph';
         windElement.classList.add('day-wind');
 
         // Append these elements to the page

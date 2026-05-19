@@ -94,11 +94,12 @@ input[type="search"] {
     font-size: 2vh;
     background-image: linear-gradient(to top, white, rgb(244, 239, 239));
     /* height: fit-content; */
+    overflow-x: hidden;
+    overflow-y: scroll;
     width: max(200px, 30vw);
     border-radius: var(--form-radius);
     position: absolute;
     max-height: 8rem;
-    overflow: scroll;
     z-index: 9999;
     box-shadow: 0px 0px 10px 5px rgba(100, 100, 111, 0.2);
 }
@@ -334,7 +335,7 @@ h2 {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    gap: .5rem;
+    gap: .2rem;
     flex-wrap: nowrap;
 }
 
@@ -369,7 +370,7 @@ h2 {
 .day img {
     width: 3.5vw;
     height: 3.5vw;
-    padding-block: .1rem;
+    /* padding-block: .1rem; */
     border-radius: var(--form-radius);
     /* transform: translateX(30%); */
 }

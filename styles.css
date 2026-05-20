@@ -426,7 +426,8 @@ h2 {
 #hours {
     height: 100%;
     /* background-image: radial-gradient(#bfd9e4, #71d0f9); */
-    overflow: auto;
+    overflow-x: none;
+    overflow-y: scroll;
     border-radius: var(--form-radius);
 
     display: flex;

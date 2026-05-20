@@ -281,7 +281,7 @@ h2 {
     height: 8cqh;
     overflow: auto;
     display: flex;
-    align-items: center; /* Centers vertically */
+    /* align-items: center; Centers vertically */
     
 }
 

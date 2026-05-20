@@ -13,27 +13,13 @@ function main() {
     // Add event listener to submit button
     document.querySelector('form').addEventListener('submit', function(evnt) {
         evnt.preventDefault();
-        console.log(document.querySelector('.suggestion'));
-        // if (document.querySelector('.suggestion').textContent === '❌ No Location Found') {
-        //     console.log('no entry');
-        // } else {
-        //     // Hide old suggestions
-        //     removeOldSuggestions();
-        //     // Get coordinates of current entry
-        //     getCoordinates();
-
-        // }
         removeOldSuggestions();
         startLoading();
         getCoordinates();
     });
-
-    // Add event listener to ensure the suggestion box hides
-    document.querySelector('input[type="search"').addEventListener('focusout', function(evnt) {
-        // removeOldSuggestions();
-    });
 }
 
+// Function used to show the loading element
 function startLoading() {
     let loadingElement = document.querySelector('#loading');
     loadingElement.style.display = 'flex';
@@ -107,6 +93,7 @@ function createSuggestions(suggestedLocations) {
         noLocationElement.innerHTML = '❌ No Location Found';
         noLocationElement.classList.add('suggestion');
         suggestLocationsElement.appendChild(noLocationElement);
+        document.querySelector('#search').setAttribute("disabled", "disabled");
     } else {   
     // If locations are found, we create a p tag for each location
     for (let location of suggestedLocations) {
@@ -114,7 +101,8 @@ function createSuggestions(suggestedLocations) {
         locationElement.addEventListener('click', handleClickSuggestion); 
         locationElement.innerHTML = `📍${location.properties.name}, ${location.properties.state}`;
         locationElement.classList.add('suggestion');
-        suggestLocationsElement.appendChild(locationElement);            
+        suggestLocationsElement.appendChild(locationElement);  
+        document.querySelector('#search').removeAttribute("disabled");          
         }
     }
 }

@@ -20,13 +20,33 @@ function convertCtoF(units, value) {
         return value;
     }
 }
-
-// Function used to calculate feels like temperature 
 function calculateFeelsLike(windSpeed, currentTemp, humidity) {
-    if (currentTemp <= 50 && windSpeed >= 3){
-        return Math.round(35.74 + (0.6215 * currentTemp) - (35.75 * (windSpeed ** 0.16)) + 0.4275 * (currentTemp * (windSpeed ** 0.16)),0);
-    } else if (currentTemp > 80) {
-            return Math.round(-43.379 + 2.04901523 * (currentTemp) + 10.14333127 * (humidity) - 0.22475541 * (currentTemp) * (humidity) -0.00683783 * (currentTemp ** 2) - 0.05481717 * (humidity ** 2) +0.00085282 * (currentTemp * (humidity ** 2)) - 0.00000199*((currentTemp ** 2) * (humidity ** 2)),0);
+
+    // Wind Chill
+    if (currentTemp <= 50 && windSpeed >= 3) {
+
+        return Math.round(
+            35.74 +
+            (0.6215 * currentTemp) -
+            (35.75 * (windSpeed ** 0.16)) +
+            (0.4275 * currentTemp * (windSpeed ** 0.16))
+        );
+
+    // Heat Index
+    } else if (currentTemp >= 80 && humidity >= 40) {
+
+        return Math.round(
+            -42.379 +
+            2.04901523 * currentTemp +
+            10.14333127 * humidity -
+            0.22475541 * currentTemp * humidity -
+            0.00683783 * (currentTemp ** 2) -
+            0.05481717 * (humidity ** 2) +
+            0.00122874 * (currentTemp ** 2) * humidity +
+            0.00085282 * currentTemp * (humidity ** 2) -
+            0.00000199 * (currentTemp ** 2) * (humidity ** 2)
+        );
+
     } else {
         return Math.round(currentTemp);
     }

@@ -75,8 +75,8 @@ function updateDay(dailyData) {
     // Update the day label
     let dayLabels = document.querySelectorAll('.day-label');
     for (let i = 0; i < daysData.length; i++) {
-        if (daysData[i].name > 12) {
-            dayLabels.style.fontSize  = 'clamp(.8rem, 1vw, 1.7rem)';
+        if (daysData[i].name.length >= 10) {
+            dayLabels[i].style.fontSize  = 'min(1vw, 1.5rem)';
         }
         dayLabels[i].textContent = daysData[i].name;
     }

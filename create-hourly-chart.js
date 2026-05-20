@@ -263,7 +263,7 @@ function hourlyWind() {
        },
   
        y: {
-        suggestedMax: 50,
+        suggestedMax: 40,
         min: 0,
          title: {
              display: true,

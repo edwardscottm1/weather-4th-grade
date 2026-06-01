@@ -101,12 +101,12 @@ function updateDay(dailyData) {
     // update precipitation
     let precipitationElements = document.querySelectorAll('.day-precip span');
     for (let i = 0; i < precipitationElements.length; i++) {
-        precipitationElements[i].textContent = dailyData[i].precipitation;
+        precipitationElements[i].textContent = daysData[i].precipitation;
     }
     // update wind
     let windElements = document.querySelectorAll('.day-wind span');
     for (let i = 0; i < windElements.length; i++) {
-        windElements[i].textContent = dailyData[i].windSpeed;
+        windElements[i].textContent = daysData[i].windSpeed;
     }
 }
 function updateHour(hourlyData) {

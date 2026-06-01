@@ -88,7 +88,7 @@ function getConditionAbbreviation(url) {
 
     if (url === null)
         return 'n/a';
-    for( let abbreviation of conditionAbbreviations) {
+    for(let abbreviation of conditionAbbreviations) {
         if (url.includes(abbreviation)) {
             if (url.includes(nonNightAbbreviations)) {
                 return abbreviation;

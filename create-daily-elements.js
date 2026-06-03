@@ -33,7 +33,7 @@ function main() {
 
         // Create wind label
         let windElement = document.createElement('p');
-        windElement.innerHTML = '🍃<span>10 - <span>20</span> mph';
+        windElement.innerHTML = '🍃<span>10 - 20</span>';
         windElement.classList.add('day-wind');
 
         // Append these elements to the page

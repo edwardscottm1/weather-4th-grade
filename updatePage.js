@@ -71,6 +71,8 @@ function updateMoon(image, phase) {
 }
 function updateDay(dailyData) {
     let daysData = dailyData.filter(day => day.isDay);
+    console.log(daysData);
+    console.log(daysData[2].windSpeed)
     let nightsData = dailyData.filter(night => !night.isDay);
     // Update the day label
     let dayLabels = document.querySelectorAll('.day-label');
@@ -106,6 +108,7 @@ function updateDay(dailyData) {
     // update wind
     let windElements = document.querySelectorAll('.day-wind span');
     for (let i = 0; i < windElements.length; i++) {
+        console.log(i);
         windElements[i].textContent = daysData[i].windSpeed;
     }
 }

@@ -180,6 +180,7 @@ form {
     min-height: 315px;
     max-height: 40vh;
 
+    /* Displacement and opacity used to animation */
     translate: 0px 10rem;
     opacity: 0;
     
@@ -486,3 +487,34 @@ h2 {
 }
 
 
+
+
+#credits {
+    width: 100%;
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: fit-content;
+    background-image: linear-gradient(to top, #95d5f0, #22B3F0);
+
+}
+
+#credits > * {
+    padding-left: 30px;
+
+}
+
+/* Color for links */
+a:link, a:visited {
+    color: blue;
+}
+
+a:hover {
+    color: darkblue;
+}
+
+a:active {
+    color: gray;
+}

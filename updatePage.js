@@ -4,7 +4,7 @@ export function updatePage(weatherData) {
     console.log(weatherData);
     updateCurrent(weatherData.current, weatherData.location, weatherData.dailyForecast, weatherData.hourlyForecast);
     updateSun(weatherData.sun);
-    updateMoon(weatherData.moonImage, weatherData.moonPhase);
+    updateMoon(weatherData.moonData);
     updateDay(weatherData.dailyForecast);
     updateHour(weatherData.hourlyForecast);
 
@@ -13,6 +13,7 @@ export function updatePage(weatherData) {
         element.style.opacity = 1;
         element.style.translate = '0px 0px';
     }
+    // Hide loading cloud
     stopLoading();
 
 }
@@ -64,15 +65,16 @@ function updateSun(sunData) {
     }
 }
 // Function used to update the moon data
-function updateMoon(image, phase) {
-    document.querySelector('#moon').setAttribute('src', image);
-    document.querySelector('#moon-phase-label').textContent = phase;
+function updateMoon(data) {
+    document.querySelector('#moon-graphic-wrapper').innerHTML = data.svgGraphic;
+    document.querySelector('#moon-phase-label').textContent = data.moonPhase;
+    document.querySelector('#next-full span').textContent = data.nextFullMoon;
     
 }
 function updateDay(dailyData) {
     let daysData = dailyData.filter(day => day.isDay);
-    console.log(daysData);
-    console.log(daysData[2].windSpeed)
+    // console.log(daysData);
+    // console.log(daysData[2].windSpeed)
     let nightsData = dailyData.filter(night => !night.isDay);
     // Update the day label
     let dayLabels = document.querySelectorAll('.day-label');
@@ -108,7 +110,7 @@ function updateDay(dailyData) {
     // update wind
     let windElements = document.querySelectorAll('.day-wind span');
     for (let i = 0; i < windElements.length; i++) {
-        console.log(i);
+        // console.log(i);
         windElements[i].textContent = daysData[i].windSpeed;
     }
 }

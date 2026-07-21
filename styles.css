@@ -313,13 +313,17 @@ h2 {
     font-weight: 100;
 }
 
+#moon-data *{
+    margin: 0;
+}
+
+
 #moon {
     width: max(180px, 25vh);
     height: max(180px, 25vh);
     border-radius: var(--form-radius);
 }
-#moon-phase-label {
-    margin: 0;
+#moon-phase-label, #next-full {
     font-size: max(1.4rem, 3vh);
 }
 
@@ -517,4 +521,17 @@ a:hover {
 
 a:active {
     color: gray;
+}
+
+
+
+#moon-graphic-wrapper {
+    background-color: black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#moon-graphic-wrapper svg {
+    filter: drop-shadow(0 0 30px hsl(220,100%,100%));
+    
 }

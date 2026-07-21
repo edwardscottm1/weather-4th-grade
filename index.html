@@ -64,8 +64,9 @@
 
         <div  id="moon-data">
           <h2>Moon Phase</h2> 
-          <img id="moon" src="images/placeholder-moon.jpg">
-          <p id="moon-phase-label">Wanning Crescent</p>
+          <div id="moon-graphic-wrapper"></div>
+          <p id="moon-phase-label">Waxing Crescent</p>
+          <p id="next-full">Next Full Moon: <span>29 July</span></p>
         </div>
       </div>
       <div id="hourly-daily" class="data">
@@ -94,7 +95,8 @@
     </div>
 
     <div id="credits">
-      <p>Data brought to you by: <a href="https://www.weather.gov/documentation/services-web-api" target="_blank">National Weather Service</a></p>
+      <p>Data brought to you by: <a href="https://www.weather.gov/documentation/services-web-api" target="_blank">National Weather Service</a>
+      and <a href="https://www.icalendar37.net/lunar/app/" target="_blank">icalender37</a> APIs</p>
     </div>
     <script src="graph-selector.js"></script>
     <script type="module" src="updatePage.js"></script>

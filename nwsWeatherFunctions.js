@@ -1,7 +1,3 @@
-import { determineMoonPhase } from './getMoonPhase.js';
-
-
-
 const BASE_URL = "https://api.weather.gov";
 const KM_To_M = 0.621371 
 
@@ -171,7 +167,7 @@ async function nwsCurrentConditions(stationsURL, BASE_URL, user_agent) {
 async function nwsDailyForecast(forecastURL) {
     // Get forecast data
     let data = await makeNWSRequest(forecastURL);
-    console.log(data)
+    // console.log(data)
     // We get data for 7 days
     let dailyForecastData = [];
     for (let day = 0; day < 14; day++) {
@@ -257,8 +253,8 @@ async function getSunData(lon, lat, data) {
     timeZone = Number(timeZone.slice(19,22));
     // NOAA needs the data to get data
 
-    let date = new Date();
-    let currentDate = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
+    const date = new Date();
+    const currentDate = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
     
     // Make API call to get data
     const URL = `https://aa.usno.navy.mil/api/rstt/oneday?date=${currentDate}&coords=${lat},${lon}&tz=${timeZone}`;
@@ -279,26 +275,37 @@ async function getSunData(lon, lat, data) {
     }  
 } 
 
-// Function used to get moon phase image from NASA
-async function getMoonImage() {
-    // Get todays date
-    let date = new Date();
-    let currentDate =
-        `${date.getFullYear()}-` +
-        `${String(date.getMonth() + 1).padStart(2, '0')}-` +
-        `${String(date.getDate()).padStart(2, '0')}T00:00`;
+// Function used to get moon phase image form icalender37
+async function getMoonData() {
 
+    // GEt needed parameters for moon
+    const day = new Date().getDate(); 
+  
+    const graphicSize = window.innerWidth / 11.81538461538462;
+    
 
-    // Make API call
-    const URL = `https://svs.gsfc.nasa.gov/api/dialamoon/${currentDate}`;
-    // const URL = `https://svs.gsfc.nasa.gov/api/dialamoon/`;
+    // URL endpoint for icalender37
+    const URL ="https://www.icalendar37.net/lunar/api/?lang=en&month="+(new Date().getMonth()+1)+"&year="+(new Date().getFullYear())+`&size=${graphicSize}&lightColor=rgba(247, 248, 223, 0.83)&shadeColor=rgb(0, 0, 0, .83)&LDZ=`+new Date(new Date().getFullYear(),new Date().getMonth(),1)/1000+"";
+
     try {
         const response = await fetch(URL);
 
         if (response.ok) {
-            var data = await response.json();
+            let data = await response.json();
             console.log(data);
-            return data.image.url;
+
+            // Process data to get date of next full moon
+            let nextFull;
+            let indexOfNext = data.nextFullMoon.indexOf("<b>");
+            nextFull = data.nextFullMoon.slice(indexOfNext).replace("<b>", "").replace("</b>", "");
+
+            // Return object with needed data
+            return {
+                moonPhase: data.phase[day].phaseName,
+                svgGraphic: data.phase[day].svg,
+                nextFullMoon: nextFull
+            }
+
         } else {
             throw new Error('Failed to fetch data');
         }
@@ -335,13 +342,13 @@ export async function startWeatherRetrieval(locationData) {
         let dailyForecastData = await nwsDailyForecast(forecastURL);
         let hourlyForecastData = await nwsHourlyForecast(forecastHourlyURL);
         let sunData = await getSunData(locationData.lon, locationData.lat, data);
-        let moonImage = await getMoonImage();
-        let moonPhase = determineMoonPhase();
+        let moonData = await getMoonData();
+        console.log(moonData);
 
        
         // Return all the data in one object
         return {location: locationData.name, current: currentData, dailyForecast: dailyForecastData, hourlyForecast: hourlyForecastData, 
-                sun: sunData, moonImage: moonImage, moonPhase: moonPhase};
+                sun: sunData, moonData: moonData};
     } else {
         console.log('could not retrieve data')
     }

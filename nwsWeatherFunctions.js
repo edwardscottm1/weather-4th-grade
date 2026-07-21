@@ -291,12 +291,13 @@ async function getMoonImage() {
 
     // Make API call
     const URL = `https://svs.gsfc.nasa.gov/api/dialamoon/${currentDate}`;
+    // const URL = `https://svs.gsfc.nasa.gov/api/dialamoon/`;
     try {
         const response = await fetch(URL);
 
         if (response.ok) {
             var data = await response.json();
-            // console.log(data);
+            console.log(data);
             return data.image.url;
         } else {
             throw new Error('Failed to fetch data');

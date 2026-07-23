@@ -184,9 +184,9 @@ form {
     max-height: 40vh;
 
     /* Displacement and opacity used to animation */
-    translate: 0px 5rem;
+    translate: 0px 10rem;
     opacity: 0;
-    
+
     transition: all 1s ease;
 }
 
@@ -518,7 +518,8 @@ h2 {
     height: fit-content;
     background-image: linear-gradient(to top, #95d5f0, #22B3F0);
 
-    translate: 0px 5rem;
+    translate: 0px 10rem;   
+    transition: all 1s ease;
 
 }
 

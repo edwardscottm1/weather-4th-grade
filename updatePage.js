@@ -13,6 +13,8 @@ export function updatePage(weatherData) {
         element.style.opacity = 1;
         element.style.translate = '0px 0px';
     }
+    document.querySelector("#credits").style.translate = "0px 0px";
+
     // Hide loading cloud
     stopLoading();
 
@@ -154,7 +156,7 @@ function updateHour(hourlyData) {
 
 }
 
-function stopLoading() {
+export function stopLoading() {
     let loadingElement = document.querySelector('#loading');
     loadingElement.style.display = 'none';
 }

@@ -23,7 +23,7 @@
           <input type="search" placeholder="Enter location">
           <div id="suggested-locations"></div>
         </div>
-        <input type="submit" value="Search" id="search">
+        <input type="submit" value="Get Weather" id="search" disabled>
       </form>
     </div>
 
@@ -95,12 +95,12 @@
     </div>
 
     <div id="credits">
-      <p>Data brought to you by: <a href="https://www.weather.gov/documentation/services-web-api" target="_blank">National Weather Service</a>
+      <p>Data courtesy of: <a href="https://www.weather.gov/documentation/services-web-api" target="_blank">National Weather Service</a>, <a href="https://aa.usno.navy.mil/data/api.html" target="_blank">United States Naval Observatory</a>
       and <a href="https://www.icalendar37.net/lunar/app/" target="_blank">icalender37</a> APIs</p>
     </div>
+
     <script src="graph-selector.js"></script>
     <script type="module" src="updatePage.js"></script>
-    <script type="module" src="getMoonPhase.js"></script>
     <script type="module" src="nwsWeatherFunctions.js"></script>
     <script type="module" src="main.js"></script>
   

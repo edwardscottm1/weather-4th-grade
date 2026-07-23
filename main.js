@@ -1,10 +1,12 @@
 import { startWeatherRetrieval } from "./nwsWeatherFunctions.js";
 import { updatePage } from "./updatePage.js";
+// import { stopLoading } from "./updatePage.js";
+
 
 'use strict';
 
 // Array to allow certain locations only
-let allowedLocations = ['city', 'town'];
+const allowedLocations = ['city', 'town'];
 // Main function 
 function main() {
     // Handle user typing in a location
@@ -168,7 +170,9 @@ async function getCoordinates() {
                     console.log('fetching data');
                     const weatherData = await  startWeatherRetrieval(locationData);
                     updatePage(weatherData);
+                    
                 } else {
+                    // stopLoading();
                     throw new Error('Failed to fetch data');
                 }
             } catch (error) {

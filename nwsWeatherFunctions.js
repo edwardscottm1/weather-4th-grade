@@ -1,3 +1,6 @@
+import { stopLoading } from "./updatePage.js";
+
+
 const BASE_URL = "https://api.weather.gov";
 const KM_To_M = 0.621371 
 
@@ -16,6 +19,7 @@ function convertCtoF(units, value) {
         return value;
     }
 }
+
 function calculateFeelsLike(windSpeed, currentTemp, humidity) {
 
     // Wind Chill
@@ -292,16 +296,36 @@ async function getMoonData() {
 
         if (response.ok) {
             let data = await response.json();
-            console.log(data);
+            // console.log(data);
 
             // Process data to get date of next full moon
             let nextFull;
             let indexOfNext = data.nextFullMoon.indexOf("<b>");
             nextFull = data.nextFullMoon.slice(indexOfNext).replace("<b>", "").replace("</b>", "");
+            
 
+            // Process data to get proper moon phase, this api does not say waxing/waning gibbous/crescent
+            let tempMoonPhase = data.phase[day].phaseName;
+            let moonIllumination = data.phase[day].lighting;
+            let moonPhase;
+
+            // Conditionals to add gibbous or crescent 
+            if (tempMoonPhase.toLowerCase() === "waxing") {
+                if (moonIllumination > 50) {
+                    moonPhase = "Waxing Gibbous"
+                } else {
+                    moonPhase = "Waxing Crescent"
+                }
+            } else if (tempMoonPhase.toLowerCase() == "waning") {
+                if (moonIllumination > 50) {
+                    moonPhase = "Waxing Gibbous"
+                } else {
+                    moonPhase = "Waxing Crescent"
+                }
+            } 
             // Return object with needed data
             return {
-                moonPhase: data.phase[day].phaseName,
+                moonPhase: moonPhase,
                 svgGraphic: data.phase[day].svg,
                 nextFullMoon: nextFull
             }
@@ -318,7 +342,7 @@ async function getMoonData() {
 // Function used to start weather retrieval
 export async function startWeatherRetrieval(locationData) {
     // Create header, nws requires this
-    console.log('getting weather');
+    // console.log('getting weather');
     const headers = {
         user_agent: 'simpleWeatherSite'
     }
@@ -343,7 +367,7 @@ export async function startWeatherRetrieval(locationData) {
         let hourlyForecastData = await nwsHourlyForecast(forecastHourlyURL);
         let sunData = await getSunData(locationData.lon, locationData.lat, data);
         let moonData = await getMoonData();
-        console.log(moonData);
+        // console.log(moonData);
 
        
         // Return all the data in one object
@@ -351,5 +375,6 @@ export async function startWeatherRetrieval(locationData) {
                 sun: sunData, moonData: moonData};
     } else {
         console.log('could not retrieve data')
+        stopLoading();
     }
 }

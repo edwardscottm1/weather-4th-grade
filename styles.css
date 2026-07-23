@@ -13,6 +13,9 @@ html, body {
     height: 100%;
     display: flex;
     flex-direction: column;
+
+    /* Prevent rubber band scroll */
+    overscroll-behavior: none;
     
 }
 
@@ -181,7 +184,7 @@ form {
     max-height: 40vh;
 
     /* Displacement and opacity used to animation */
-    translate: 0px 10rem;
+    translate: 0px 5rem;
     opacity: 0;
     
     transition: all 1s ease;
@@ -330,7 +333,18 @@ h2 {
 #moon-data h2, #hourly-data h2, #daily-data h2, #sun-data h2 {
     font-weight: 100;
     /* font-size: 30px; */
+}
 
+#moon-graphic-wrapper {
+    background-color: black;
+    border-radius: var(--form-radius);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#moon-graphic-wrapper svg {
+    filter: drop-shadow(0 0 30px hsl(220,100%,100%));
+    
 }
 
 #daily-data {
@@ -377,6 +391,7 @@ h2 {
     height: 3.5vw;
     /* padding-block: .1rem; */
     border-radius: var(--form-radius);
+    box-shadow: 0px 0px 10px 2px rgba(79, 79, 84, 0.3);
     /* transform: translateX(30%); */
 }
 .day * {
@@ -503,6 +518,8 @@ h2 {
     height: fit-content;
     background-image: linear-gradient(to top, #95d5f0, #22B3F0);
 
+    translate: 0px 5rem;
+
 }
 
 #credits > * {
@@ -525,13 +542,3 @@ a:active {
 
 
 
-#moon-graphic-wrapper {
-    background-color: black;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-#moon-graphic-wrapper svg {
-    filter: drop-shadow(0 0 30px hsl(220,100%,100%));
-    
-}

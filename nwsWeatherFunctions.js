@@ -312,15 +312,15 @@ async function getMoonData() {
             // Conditionals to add gibbous or crescent 
             if (tempMoonPhase.toLowerCase() === "waxing") {
                 if (moonIllumination > 50) {
-                    moonPhase = "Waxing Gibbous"
+                    moonPhase = "Waxing Gibbous";
                 } else {
-                    moonPhase = "Waxing Crescent"
+                    moonPhase = "Waxing Crescent";
                 }
             } else if (tempMoonPhase.toLowerCase() == "waning") {
                 if (moonIllumination > 50) {
-                    moonPhase = "Waxing Gibbous"
+                    moonPhase = "Waning Gibbous";
                 } else {
-                    moonPhase = "Waxing Crescent"
+                    moonPhase = "Waning Crescent";
                 }
             } 
             // Return object with needed data

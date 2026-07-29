@@ -296,16 +296,21 @@ async function getMoonData() {
 
         if (response.ok) {
             let data = await response.json();
-            // console.log(data);
+            console.log(data);
 
             // Process data to get date of next full moon
             let nextFull;
-            let indexOfNext = data.nextFullMoon.indexOf("<b>");
-            nextFull = data.nextFullMoon.slice(indexOfNext).replace("<b>", "").replace("</b>", "");
+            if (data.nextFullMoon.includes("Full moon")) {
+                nextFull = "Today";
+            } else {
+                let indexOfNext = data.nextFullMoon.indexOf("<b>");
+                nextFull = data.nextFullMoon.slice(indexOfNext).replace("<b>", "").replace("</b>", "");
+            }
             
 
             // Process data to get proper moon phase, this api does not say waxing/waning gibbous/crescent
             let tempMoonPhase = data.phase[day].phaseName;
+            console.log(tempMoonPhase);
             let moonIllumination = data.phase[day].lighting;
             let moonPhase;
 
@@ -316,13 +321,16 @@ async function getMoonData() {
                 } else {
                     moonPhase = "Waxing Crescent";
                 }
-            } else if (tempMoonPhase.toLowerCase() == "waning") {
+            } else if (tempMoonPhase.toLowerCase() === "waning") {
                 if (moonIllumination > 50) {
                     moonPhase = "Waning Gibbous";
                 } else {
                     moonPhase = "Waning Crescent";
                 }
-            } 
+            } else if (tempMoonPhase.toLowerCase() === "full moon") {
+                moonPhase = "Full Moon";
+            }
+            
             // Return object with needed data
             return {
                 moonPhase: moonPhase,

@@ -300,7 +300,7 @@ async function getMoonData() {
 
             // Process data to get date of next full moon
             let nextFull;
-            if (data.nextFullMoon.includes("Full moon")) {
+            if (data.nextFullMoon.includes("today") || data.nextFullMoon.includes("Today")) {
                 nextFull = "Today";
             } else {
                 let indexOfNext = data.nextFullMoon.indexOf("<b>");

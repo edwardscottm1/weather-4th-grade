@@ -329,6 +329,9 @@ async function getMoonData() {
                 }
             } else if (tempMoonPhase.toLowerCase() === "full moon") {
                 moonPhase = "Full Moon";
+            // For when it says first/last quarter
+            } else {
+                moonPhase = tempMoonPhase;
             }
             
             // Return object with needed data

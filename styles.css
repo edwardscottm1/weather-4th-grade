@@ -60,17 +60,26 @@ html, body {
 nav {
     background-attachment: fixed;
     background-image: linear-gradient(to bottom, #bfd9e4, #22B3F0);
-    /* height: 50px; */
+    height: 50px;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row; 
     
 }
 
 #title {
     font-size: 2vw;
     margin: 5px;
+    display: inline;
+}
+
+#logo {
+    width: 2vw;
+    height: 2vw;
+    display: inline;
+    margin-right: 10px;
+    margin-top: 10px;
 }
 
 #search-location {
@@ -473,8 +482,8 @@ h2 {
 #graph-selector > div {
     /* background-color: #71d0f9; */
     /* width: 1.3rem; */
-    height: clamp(1.2rem, 24px, 3vh);
-    width: clamp(1.2rem, 24px, 3vh);
+    height: clamp(1.2rem, 3vh, 24px);
+    width: clamp(1.2rem, 3vh, 24px);
     /* background-image: linear-gradient(to bottom, #bfd9e4, #71d0f9); */
     user-select: none;
     cursor: pointer;

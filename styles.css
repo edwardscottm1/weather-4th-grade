@@ -80,6 +80,7 @@ nav {
     display: inline;
     margin-right: 10px;
     margin-top: 10px;
+    border-radius: var(--form-radius);
 }
 
 #search-location {

@@ -142,7 +142,7 @@ input[type="search"] {
 input[type="submit"] {
     background-color: #22B3F0;
     border-radius: var(--form-radius);
-    height: var(--form-height);
+    /* height: var(--form-height); */
     width: max(100px, 6vw);
     height: max(30px, 5vh);
 
@@ -150,6 +150,7 @@ input[type="submit"] {
     transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
     cursor: pointer;
 
+    padding: 0px;
     text-align: center;
 }
 

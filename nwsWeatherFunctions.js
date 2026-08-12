@@ -135,6 +135,7 @@ async function nwsCurrentConditions(stationsURL, BASE_URL, user_agent) {
     
     if (currentDataRequest) {
         let currentData = {};
+        console.log(currentDataRequest);
         
         // Get wind speed
         if (currentDataRequest.properties.windSpeed.value !== null)

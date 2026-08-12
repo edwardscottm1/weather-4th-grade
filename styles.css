@@ -226,6 +226,7 @@ h2 {
 
 #current-data {
     flex: 1.5;
+    /* overflow: hidden; */
 }
 
 #location {
@@ -295,9 +296,10 @@ h2 {
 }
 
 #current-condition-container-description {
-    height: 8cqh;
+    /* height: 8cqh; */
+    max-height: 6cqh;
     overflow: auto;
-    display: flex;
+    /* display: flex; */
     /* align-items: center; Centers vertically */
     
 }

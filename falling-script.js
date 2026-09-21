@@ -41,6 +41,6 @@ function createRandomFallingElements(images, count, maxAnimationDelay, animation
     document.body.append(...elements);
 
 }
-
+// For fall
 const images = ["./images/fallingImages/leaf1.svg", "./images/fallingImages/leaf2.svg", "./images/fallingImages/leaf3.svg"]
 createRandomFallingElements(images, 20, 8, 8, 40);

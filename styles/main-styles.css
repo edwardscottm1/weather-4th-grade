@@ -2,21 +2,35 @@
     --form-radius: 5px;
     --form-height: 30px;
     --red: #ed5142;
+
+    /* Summer */
+    /* --bg-color: #22B3F0;
+    --bg-color2: #93c0d5; 
+    --bg-color-nav: #bfd9e4;
+    --bg-color-credits: #95d5f0; 
+    --bg-color-daily: #71d0f9; */
+   
+    /* fall */
+    --bg-color: #e27712;
+    --bg-color2: #f6ab72;
+    --bg-color-nav: #fdcaa6;
+    --bg-color-credits: #fbc095;
+    --bg-color-daily: #f2a161;
 }
 
 html, body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* background-color: #22B3F0; */
+    /* background-color: var(--bg-color); */
     margin: 0px;
     background-attachment: fixed;
-    background-image: linear-gradient(to bottom, #93c0d5, #22B3F0);
+    background-image: linear-gradient(to bottom, var(--bg-color2), var(--bg-color));
     height: 100%;
     display: flex;
     flex-direction: column;
 
     /* Prevent rubber band scroll */
     overscroll-behavior: none;
-    
+    position: relative;
 }
 
 #loading {
@@ -59,7 +73,7 @@ html, body {
 
 nav {
     background-attachment: fixed;
-    background-image: linear-gradient(to bottom, #bfd9e4, #22B3F0);
+    background-image: linear-gradient(to bottom, var(--bg-color-nav), var(--bg-color));
     height: 50px;
     display: flex;
     justify-content: center;
@@ -141,7 +155,7 @@ input[type="search"] {
 
 
 input[type="submit"] {
-    background-color: #22B3F0;
+    background-color: white;
     border-radius: var(--form-radius);
     /* height: var(--form-height); */
     width: max(100px, 6vw);
@@ -164,7 +178,7 @@ input[type="submit"]:active {
 }
 
 form {
-    background-color: #8db3c5;
+    /* background-color: #8db3c5; */
     box-shadow: rgba(100, 100, 111, 0.2) 0px 0px 5px 2px;
 }
 
@@ -177,8 +191,6 @@ form {
     flex-direction: column;
     justify-content: center;
     height: fit-content;
-    
-
     /* max-height: 612px;  */
 }
 
@@ -346,6 +358,10 @@ h2 {
     font-size: max(1.4rem, 3vh);
 }
 
+#moon-data h2 {
+    margin-bottom: 4px;
+}
+
 #moon-data h2, #hourly-data h2, #daily-data h2, #sun-data h2 {
     font-weight: 100;
     /* font-size: 30px; */
@@ -376,7 +392,8 @@ h2 {
 
 #days {
     height: 80%;
-    background-image: radial-gradient(#bfd9e4, #71d0f9);
+    /* background-image: radial-gradient(#bfd9e4, #71d0f9); */
+    background-color: var(--bg-color-daily);
     overflow-x: auto;
     overflow-y: hidden;
     border-radius: var(--form-radius);
@@ -532,7 +549,7 @@ h2 {
     flex-direction: column;
     justify-content: center;
     height: fit-content;
-    background-image: linear-gradient(to top, #95d5f0, #22B3F0);
+    background-image: linear-gradient(to top, var(--bg-color-credits), var(--bg-color));
 
     translate: 0px 10rem;   
     transition: all 1s ease;

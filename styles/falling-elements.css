@@ -1,0 +1,22 @@
+.falling-element {
+    position: fixed;
+    top: -10%;
+    /* left: 50%; */
+    z-index: 99999;
+    animation: fall ease infinite;
+
+    /* Ensure user cannot click or select it by accident */
+    pointer-events: none;
+    user-select: none;
+}
+
+
+
+@keyframes fall {
+    0% {
+        top:-10%
+    }
+    100% {
+        top: 110%
+    }
+}

@@ -1,5 +1,6 @@
 'use strict';
 
+// Export allows hte function be used in another script
 export function updatePage(weatherData) {
     console.log(weatherData);
     updateCurrent(weatherData.current, weatherData.location, weatherData.dailyForecast, weatherData.hourlyForecast);

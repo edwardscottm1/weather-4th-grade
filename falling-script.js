@@ -33,7 +33,8 @@ function createRandomFallingElements(images, count, maxAnimationDelay, animation
         // MOve element to a random x pos abd rotation
         element.addEventListener("animationiteration", function (evnt){ 
             evnt.target.style.left = `${Math.random() * 110}%`;
-            element.style.rotate = `${Math.random() * 360} deg`;
+            evnt.target.style.rotate = `${Math.random() * 360}deg`;
+            // element.style.animationDelay = "0s";
         });
     
     }

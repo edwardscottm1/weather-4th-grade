@@ -3,7 +3,7 @@
     top: -10%;
     /* left: 50%; */
     z-index: 99999;
-    animation: fall ease infinite;
+    animation: fall ease-out infinite;
 
     /* Ensure user cannot click or select it by accident */
     pointer-events: none;

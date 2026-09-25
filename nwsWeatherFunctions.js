@@ -77,6 +77,7 @@ function determineWindDirection(angle){
 
 // Function used to get condition abbreviation for condition
 function getConditionAbbreviation(url) {
+
     const conditionAbbreviations = [
                              "wind_skc","wind_few","wind_sct","wind_bkn","wind_ovc",
                              "rain_snow","rain_sleet","snow_sleet","rain_fzra","snow_fzra",
@@ -135,6 +136,7 @@ async function nwsCurrentConditions(stationsURL, BASE_URL, user_agent) {
     
     if (currentDataRequest) {
         let currentData = {};
+        console.log("current data")
         console.log(currentDataRequest);
         
         // Get wind speed
@@ -153,7 +155,9 @@ async function nwsCurrentConditions(stationsURL, BASE_URL, user_agent) {
             currentData.humidity = 0;
         
         // Get condition image
+        console.log(currentDataRequest.properties.icon);
         currentData.conditionImage = getConditionAbbreviation(currentDataRequest.properties.icon);
+        console.log(currentData.conditionImage);
 
         // Get dew point
         currentData.dewPoint = Math.round(convertCtoF(currentDataRequest.properties.dewpoint.unitCode, currentDataRequest.properties.dewpoint.value));

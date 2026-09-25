@@ -5,7 +5,7 @@ function createRandomFallingElements(images, count, maxAnimationDelay, animation
 
     // Save each element into an array
     let elements = [];
-    for (let i = 0; i <= count; i++) {
+    for (let i = 0; i < count; i++) {
         // Create an element
         let element = document.createElement('img');
         // Give it a random left and animationDelay value and set a duration
@@ -45,3 +45,4 @@ function createRandomFallingElements(images, count, maxAnimationDelay, animation
 // For fall
 const images = ["./images/fallingImages/leaf1.svg", "./images/fallingImages/leaf2.svg", "./images/fallingImages/leaf3.svg"]
 createRandomFallingElements(images, 20, 8, 8, 40);
+createRandomFallingElements(images, 750, 8, 8, 40);

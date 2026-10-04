@@ -1,9 +1,9 @@
 .falling-element {
     position: fixed;
-    top: -10%;
+    /* top: -10%; */
     /* left: 50%; */
     z-index: 99999;
-    animation: fall ease-out infinite;
+    /* animation: fall ease-out infinite; */
 
     /* Ensure user cannot click or select it by accident */
     pointer-events: none;
@@ -18,5 +18,14 @@
     }
     100% {
         top: 110%
+    }
+}
+
+@keyframes rise {
+    0% {
+        top: 110%
+    }
+    100% {
+        top: -10%
     }
 }

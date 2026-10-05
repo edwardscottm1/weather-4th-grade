@@ -62,4 +62,4 @@ function createRandomFallingElements(images, count, maxAnimationDelay, animation
 
 // For balloon fiesta
 const images = ["./images/fallingImages/hot-air-balloon-1.svg", "./images/fallingImages/hot-air-balloon-2.svg", "./images/fallingImages/hot-air-balloon-3.svg"];
-createRandomFallingElements(images, 15, 20, 8, 74, false, true);
+createRandomFallingElements(images, 15, 20, 20, 74, false, true);

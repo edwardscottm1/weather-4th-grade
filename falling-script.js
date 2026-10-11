@@ -57,9 +57,17 @@ function createRandomFallingElements(images, count, maxAnimationDelay, animation
 
 }
 // For fall
-// const images = ["./images/fallingImages/leaf1.svg", "./images/fallingImages/leaf2.svg", "./images/fallingImages/leaf3.svg"];
+const images = ["./images/fallingImages/leaf1.svg", "./images/fallingImages/leaf2.svg", "./images/fallingImages/leaf3.svg"];
+createRandomFallingElements(images, 15, 12, 12, 40);
+const images2 = ["./images/fallingImages/fall-jack.svg"];
+createRandomFallingElements(images2, 5, 12, 12, 0, false);
+// fall with pumpkins
 // createRandomFallingElements(images, 20, 8, 8, 40);
 
 // For balloon fiesta
-const images = ["./images/fallingImages/hot-air-balloon-1.svg", "./images/fallingImages/hot-air-balloon-2.svg", "./images/fallingImages/hot-air-balloon-3.svg"];
-createRandomFallingElements(images, 15, 20, 20, 74, false, true);
+// const images = ["./images/fallingImages/hot-air-balloon-1.svg", "./images/fallingImages/hot-air-balloon-2.svg", "./images/fallingImages/hot-air-balloon-3.svg"];
+// createRandomFallingElements(images, 15, 20, 20, 74, false, true);
+
+// For halloween
+// const images = ["./images/fallingImages/hallo-bat.svg", "./images/fallingImages/hallo-ghost.svg", "./images/fallingImages/hallo-hat.svg", "./images/fallingImages/hallo-pumpkin.svg", "./images/fallingImages/hallo-skull.svg"];
+// createRandomFallingElements(images, 25, 15, 15, 45, false, false);

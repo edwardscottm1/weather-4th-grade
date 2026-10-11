@@ -3,19 +3,27 @@
     --form-height: 30px;
     --red: #ed5142;
 
-    /* Summer */
-    --bg-color: #22B3F0;
+    /* Summer and balloon fiesta*/
+    /* --bg-color: #22B3F0;
     --bg-color2: #93c0d5; 
     --bg-color-nav: #bfd9e4;
     --bg-color-credits: #95d5f0; 
-    --bg-color-daily: #71d0f9;
+    --bg-color-daily: #71d0f9; */
    
     /* fall */
-    /* --bg-color: #e27712;
+    --bg-color: #e27712;
     --bg-color2: #f6ab72;
     --bg-color-nav: #fdcaa6;
     --bg-color-credits: #fbc095;
-    --bg-color-daily: #f2a161; */
+    --bg-color-daily: #f2a161;
+   
+    /* Halloween */
+    /* --bg-color: #ac1af4;
+    --bg-color2: #c561f8;
+    --bg-color-nav: #e0a2fc;
+    --bg-color-credits: #e0a2fc;
+    --bg-color-daily: #c561f8; */
+   
 }
 
 html, body {
